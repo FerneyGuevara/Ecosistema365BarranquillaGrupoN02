@@ -685,21 +685,7 @@
                                     <a href="#sesion-7">Sección No 7: Encuestas</a>
                                 </div>
                             </div>
-                            <a id="nav-convocatoria" href="CRONOGRAMA_EDT_TRANSF_TAL_HUMANO_G2.pdf"
-                                download="CRONOGRAMA_EDT_TRANSF_TAL_HUMANO_G2.pdf" target="_blank"
-                                rel="noopener noreferrer">Convocatoria</a>
-                            <div class="dropdown">
-                                <a id="nav-horario" href="javascript:void(0)" class="dropdown-trigger">Horario <span
-                                        style="font-size: 0.7rem; margin-left: 4px; opacity: 0.8;">▼</span></a>
-                                <div class="dropdown-content">
-                                    <a href="SESION No 1.pdf" target="_blank" rel="noopener noreferrer">SESIÓN No 1</a>
-                                    <a href="SESION No 2.pdf" target="_blank" rel="noopener noreferrer">SESIÓN No 2</a>
-                                    <a href="SESION No 3.pdf" target="_blank" rel="noopener noreferrer">SESIÓN No 3</a>
-                                    <a href="SESION No 4.pdf" target="_blank" rel="noopener noreferrer">SESIÓN No 4</a>
-                                    <a href="SESION No 5.pdf" target="_blank" rel="noopener noreferrer">SESIÓN No 5</a>
-                                    <a href="SESION No 6.pdf" target="_blank" rel="noopener noreferrer">SESIÓN No 6</a>
-                                </div>
-                            </div>
+
                             <div class="dropdown">
                                 <a id="nav-instructores" href="javascript:void(0)" class="dropdown-trigger">Instructores
                                     <span style="font-size: 0.7rem; margin-left: 4px; opacity: 0.8;">▼</span></a>
@@ -720,8 +706,8 @@
 
         <section class="intro-section">
             <h1>TRANSFORMACIÓN DE LA GESTIÓN DEL TALENTO HUMANO EN ESQUEMAS DE TRABAJO FLEXIBLE CON MICROSOFT 365</h1>
-            <p>Explora las secciones con un diseño moderno y dinámico. Cada pestaña incorpora video, vista previa y
-                descargas para que consumas el contenido de forma clara, ordenada y agradable.</p>
+            <p>Explora cada una de las secciones, cada pestaña incorpora sondeos, enlaces para subir evidencias y NOTION
+                con el material de apoyo, para un contenido claro ordenado y agradable</p>
         </section>
 
         <section id="sesiones" class="section-sesiones" aria-labelledby="sesiones-title">
@@ -1165,10 +1151,6 @@
         // Application Initialization
         const init = () => {
             // Event Listeners (Registered cleanly once to avoid memory leaks)
-            q('#nav-convocatoria')?.addEventListener('click', () => {
-                showToast('Descargando documento de convocatoria.');
-            });
-
             // Dropdown toggle behavior for all dropdowns
             qa('.top-nav .dropdown').forEach(dropdown => {
                 const trigger = dropdown.querySelector('.dropdown-trigger');
