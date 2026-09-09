@@ -698,8 +698,10 @@
                                         Mahecha F</a>
                                 </div>
                             </div>
-                            <a id="nav-fotos" href="#fotos">Fotos</a>
-                            <a id="nav-asistencias" href="asistencia%20Barranquilla%20No%202.pdf" target="_blank" rel="noopener noreferrer">Asistencias</a>
+                            <a id="nav-fotos" href="fotos.pdf" download="fotos.pdf" target="_blank"
+                                rel="noopener noreferrer">Fotos</a>
+                            <a id="nav-asistencias" href="asistencia%20Barranquilla%20No%202.pdf" target="_blank"
+                                rel="noopener noreferrer">Asistencias</a>
                         </nav>
                     </div>
                 </div>
@@ -1177,7 +1179,11 @@
                 link.addEventListener('click', () => {
                     const href = link.getAttribute('href');
                     if (href && !href.startsWith('#') && href !== 'javascript:void(0)') {
-                        showToast(`Abriendo ${link.textContent} en una pestaña independiente.`);
+                        if (link.hasAttribute('download')) {
+                            showToast(`Descargando ${link.textContent}...`);
+                        } else {
+                            showToast(`Abriendo ${link.textContent} en una pestaña independiente.`);
+                        }
                     }
                 });
             });
@@ -1236,14 +1242,10 @@
 
             // Handle Fotos & Asistencias navigation
             q('#nav-fotos')?.addEventListener('click', () => {
-                const target = q('#fotos');
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    showToast('Sección de Fotos');
-                }
+                showToast('Descargando Fotos...');
             });
 
+            // Handle Asistencias navigation
             q('#nav-asistencias')?.addEventListener('click', () => {
                 showToast('Abriendo Asistencias en una nueva pestaña.');
             });
