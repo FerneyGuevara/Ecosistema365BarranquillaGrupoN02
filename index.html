@@ -698,6 +698,8 @@
                                         Mahecha F</a>
                                 </div>
                             </div>
+                            <a id="nav-fotos" href="#fotos">Fotos</a>
+                            <a id="nav-asistencias" href="asistencia%20Barranquilla%20No%202.pdf" target="_blank" rel="noopener noreferrer">Asistencias</a>
                         </nav>
                     </div>
                 </div>
@@ -1230,6 +1232,20 @@
                 qa('.top-nav a').forEach(a => a.classList.remove('active'));
                 qa('.top-nav a')[0]?.classList.add('active'); // active Inicio
                 q('#top')?.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Handle Fotos & Asistencias navigation
+            q('#nav-fotos')?.addEventListener('click', () => {
+                const target = q('#fotos');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    showToast('Sección de Fotos');
+                }
+            });
+
+            q('#nav-asistencias')?.addEventListener('click', () => {
+                showToast('Abriendo Asistencias en una nueva pestaña.');
             });
 
             // Initial Render
